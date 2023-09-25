@@ -20,11 +20,11 @@ public class CameraController : MonoBehaviour
     {
 
         // Trigger functions if Rotate is requested
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("m"))
         {
             targetAngle -= 90.0f;
         }
-        else if (Input.GetKeyDown("z"))
+        else if (Input.GetKeyDown("n"))
         {
             targetAngle += 90.0f;
         }
@@ -69,13 +69,13 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("m"))
         {
             rotPosition++;
             if (rotPosition > 3)
                 rotPosition = 0;
         }
-        else if (Input.GetKeyDown("z"))
+        else if (Input.GetKeyDown("n"))
         {
             rotPosition--;
             if (rotPosition < 0)
