@@ -2,6 +2,7 @@ using UnityEngine;
 
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,10 +30,42 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        float moveHorizontal = Input.GetAxis("Horizontal");  //x
+        float moveVertical = Input.GetAxis("Vertical"); //y
+        Vector3 movement = new Vector3();
 
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        int rotationSwitch = CameraController.rotPosition;
+
+        switch (rotationSwitch)
+        {
+
+            case 0:
+                movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+                break;
+
+            case 1:
+                movement = new Vector3(moveVertical, 0.0f, -1 * moveHorizontal);
+                break;
+
+            case 2:
+                movement = new Vector3(moveHorizontal * -1, 0.0f, moveVertical * -1);
+                break;
+
+            case 3:
+                movement = new Vector3(moveVertical * -1, 0.0f, moveHorizontal);
+                break;
+        }
 
         rb.AddForce(movement * speed);
+
+        if (this.transform.position.y <= -20)
+        {
+            this.transform.position = new Vector3(0, 5, 0);
+            count = 0;
+            
+        }
+        
+        
     }
 
     void OnTriggerEnter(Collider other)
