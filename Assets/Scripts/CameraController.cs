@@ -85,19 +85,19 @@ public class CameraController : MonoBehaviour
         switch (rotPosition)
         {
             case 0:
-                offset = new Vector3(0, 3, -3);
+                offset = new Vector3(0, 5, -5);
                 break;
 
             case 1:
-                offset = new Vector3(-3, 3, 0);
+                offset = new Vector3(-5, 5, 0);
                 break;
 
             case 2:
-                offset = new Vector3(0, 3, 3);
+                offset = new Vector3(0, 5, 5);
                 break;
 
             case 3:
-                offset = new Vector3(3, 3, 0);
+                offset = new Vector3(5, 5, 0);
                 break;
         }
 
