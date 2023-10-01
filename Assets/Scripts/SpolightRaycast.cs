@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class SpotlightRaycast : MonoBehaviour
@@ -6,11 +7,13 @@ public class SpotlightRaycast : MonoBehaviour
     public LayerMask playerLayer;
     public int rayCount = 12; // Number of rays to cast for the cone pattern
     private Vector3[] initialRayDirections;
-
+    public TextMeshProUGUI loseText;
+    public Rigidbody playerRigidbody;
     void Start()
     {
         // Calculate initial ray directions based on the spotlight's cone angle
         initialRayDirections = CalculateRayDirections();
+        loseText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -30,8 +33,13 @@ public class SpotlightRaycast : MonoBehaviour
                 // Check if the raycast hit a player
                 if (hit.collider.CompareTag("Player"))
                 {
-                    Debug.Log("Player detected!");
-                    // You can perform actions here when a player is detected.
+                    loseText.gameObject.SetActive(true);
+
+                    if (playerRigidbody != null)
+                    {
+                        playerRigidbody.isKinematic = true;
+                    }
+
                 }
             }
 
