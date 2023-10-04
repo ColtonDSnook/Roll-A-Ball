@@ -9,6 +9,7 @@ public class SpotlightRaycast : MonoBehaviour
     private Vector3[] initialRayDirections;
     public TextMeshProUGUI loseText;
     public Rigidbody playerRigidbody;
+    public GameObject gameoverObject;
     void Start()
     {
         // Calculate initial ray directions based on the spotlight's cone angle
@@ -33,10 +34,12 @@ public class SpotlightRaycast : MonoBehaviour
                 // Check if the raycast hit a player
                 if (hit.collider.CompareTag("Player"))
                 {
+                    // Game over
                     loseText.gameObject.SetActive(true);
-
+                    // Deactivate player and return mouse control
                     GameObject.Find("FirstPersonController").active = false;
-
+                    Cursor.lockState = CursorLockMode.None;
+                    gameoverObject.SetActive(true);
                 }
             }
 

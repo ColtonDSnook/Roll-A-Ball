@@ -14,4 +14,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadSceneAsync("Main Menu");
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

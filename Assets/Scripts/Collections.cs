@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
     
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
-
-
+    
 
     private Rigidbody rb;
     private int count;
@@ -51,6 +50,8 @@ public class PlayerController : MonoBehaviour
         if (count >= 12)
         {
             winTextObject.SetActive(true);
+            GameObject.Find("FirstPersonController").active = false;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
