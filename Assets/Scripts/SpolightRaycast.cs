@@ -35,10 +35,7 @@ public class SpotlightRaycast : MonoBehaviour
                 {
                     loseText.gameObject.SetActive(true);
 
-                    if (playerRigidbody != null)
-                    {
-                        playerRigidbody.isKinematic = true;
-                    }
+                    GameObject.Find("FirstPersonController").active = false;
 
                 }
             }
