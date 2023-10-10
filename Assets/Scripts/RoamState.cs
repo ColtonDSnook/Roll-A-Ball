@@ -36,7 +36,7 @@ public class RoamState : State
 
     public Transform[] waypoints;
     int minIndex = 0;
-    int maxIndex = 5;
+    int maxIndex = 4;
     int waypointIndex;
     Vector3 target;
     private void UpdateEnemy()
