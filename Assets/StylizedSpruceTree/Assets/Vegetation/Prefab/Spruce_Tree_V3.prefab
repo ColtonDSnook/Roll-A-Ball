@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8841146842070593640}
   - component: {fileID: 4388775002705594137}
+  - component: {fileID: 6153673174136094311}
   m_Layer: 0
   m_Name: Spruce_Tree_V3
   m_TagString: Untagged
@@ -230,6 +231,29 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6767404695940018749}
   m_Enabled: 1
+--- !u!136 &6153673174136094311
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212807160898218706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &8445923264758094658
 GameObject:
   m_ObjectHideFlags: 0
