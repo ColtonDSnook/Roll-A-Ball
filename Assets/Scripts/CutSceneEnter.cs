@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CutSceneEnter : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class CutSceneEnter : MonoBehaviour
 
     IEnumerator FinishCut()
     {
-        yield return new WaitForSeconds(1);
-        
+        yield return new WaitForSeconds(3);
+        cutsceneCam.SetActive(false);
     }
 }

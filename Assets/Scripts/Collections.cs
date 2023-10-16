@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject EnemyDesignEnd;
     public GameObject Enemy;
     public GameObject CutSceneTrigger;
+    public GameObject counter;
 
     private Rigidbody rb;
     private int count;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if (count >= 8)
         {
+            counter.SetActive(false);
             EnemyDesignEnd.SetActive(true);
             Enemy.SetActive(false);
             CutSceneTrigger.SetActive(true);
