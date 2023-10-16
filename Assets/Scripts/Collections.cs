@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
 
     
     public TextMeshProUGUI countText;
-    public GameObject winTextObject;
-    
+    public GameObject EnemyDesignEnd;
+    public GameObject Enemy;
+    public GameObject CutSceneTrigger;
 
     private Rigidbody rb;
     private int count;
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
 
-        winTextObject.SetActive(false);
+        EnemyDesignEnd.SetActive(false);
     }
 
 
@@ -47,11 +48,11 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 12)
+        if (count >= 8)
         {
-            winTextObject.SetActive(true);
-            GameObject.Find("FirstPersonController").active = false;
-            Cursor.lockState = CursorLockMode.None;
+            EnemyDesignEnd.SetActive(true);
+            Enemy.SetActive(false);
+            CutSceneTrigger.SetActive(true);
         }
     }
 }
