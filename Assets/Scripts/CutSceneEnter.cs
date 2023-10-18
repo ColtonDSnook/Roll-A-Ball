@@ -8,6 +8,7 @@ public class CutSceneEnter : MonoBehaviour
 {
     public GameObject Player;
     public GameObject cutsceneCam;
+    public GameObject Fade;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,7 +20,10 @@ public class CutSceneEnter : MonoBehaviour
 
     IEnumerator FinishCut()
     {
-        yield return new WaitForSeconds(3);
-        cutsceneCam.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Fade.SetActive(true);
+        yield return new WaitForSeconds(1);
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadSceneAsync("Game End");
     }
 }

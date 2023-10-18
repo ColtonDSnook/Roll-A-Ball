@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Enemy;
     public GameObject CutSceneTrigger;
     public GameObject counter;
+    public GameObject fight;
 
     private Rigidbody rb;
     private int count;
@@ -55,6 +56,22 @@ public class PlayerController : MonoBehaviour
             EnemyDesignEnd.SetActive(true);
             Enemy.SetActive(false);
             CutSceneTrigger.SetActive(true);
+            StartCoroutine(FightBack());
+        }
+
+        IEnumerator FightBack()
+        {
+            fight.SetActive(true);
+            yield return new WaitForSeconds(1);
+            fight.SetActive(false);
+            yield return new WaitForSeconds(1);
+            fight.SetActive(true);
+            yield return new WaitForSeconds(1);
+            fight.SetActive(false);
+            yield return new WaitForSeconds(1);
+            fight.SetActive(true);
+            yield return new WaitForSeconds(1);
+            fight.SetActive(false);
         }
     }
 }

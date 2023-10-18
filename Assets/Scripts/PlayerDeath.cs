@@ -11,6 +11,7 @@ public class PlayerDeath : MonoBehaviour
     public GameObject gameoverObject;
     public GameObject gameovercam;
     public GameObject countText;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
