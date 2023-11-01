@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class Collections : MonoBehaviour
 {
 
     
