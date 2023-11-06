@@ -65464,6 +65464,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1628113428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &967070766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967070768}
+  - component: {fileID: 967070767}
+  m_Layer: 0
+  m_Name: ChaseTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &967070767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967070766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e0084f918b6be4a9262acf88f16195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1242492981}
+--- !u!4 &967070768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967070766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242492979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995358295
 GameObject:
   m_ObjectHideFlags: 0
@@ -71184,6 +71229,7 @@ Transform:
   m_Children:
   - {fileID: 358495725}
   - {fileID: 789956156}
+  - {fileID: 967070768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1242492981
@@ -71196,7 +71242,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -72755,6 +72801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1ccf7b60db93d43a78443c94a6f5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpeedAdjuster: {fileID: 967070767}
   player: {fileID: 1382805073}
   roamState: {fileID: 1356231896}
   chaseDistance: 25
@@ -80140,7 +80187,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -19.470825, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2128474185
