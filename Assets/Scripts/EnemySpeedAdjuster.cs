@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class EnemySpeedAdjuster : MonoBehaviour
 {
     public NavMeshAgent enemy;
-
+    public float ogSpeed = 8.0f;
+    public float newSpeed = 3.0f;
 
     public void ChaseTimer()
     {
@@ -19,10 +20,8 @@ public class EnemySpeedAdjuster : MonoBehaviour
     IEnumerator Stamina()
     {
         yield return new WaitForSeconds(10);
-        float newSpeed = 3.0f;
         enemy.speed = newSpeed;
         yield return new WaitForSeconds(8);
-        float ogSpeed = 8.0f;
         enemy.speed = ogSpeed;
 
     }
