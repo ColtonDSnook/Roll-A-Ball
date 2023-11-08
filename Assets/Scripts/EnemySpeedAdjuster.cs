@@ -19,10 +19,10 @@ public class EnemySpeedAdjuster : MonoBehaviour
     IEnumerator Stamina()
     {
         yield return new WaitForSeconds(10);
-        float newSpeed = 0.0f;
+        float newSpeed = 3.0f;
         enemy.speed = newSpeed;
         yield return new WaitForSeconds(8);
-        float ogSpeed = 9.0f;
+        float ogSpeed = 8.0f;
         enemy.speed = ogSpeed;
 
     }
