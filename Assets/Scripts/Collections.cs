@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.AI;
 
 using TMPro;
 using System.Collections;
@@ -14,6 +14,8 @@ public class Collections : MonoBehaviour
     public GameObject CutSceneTrigger;
     public GameObject counter;
     public GameObject fight;
+    public EnemySpeedAdjuster enemySpeedAdjuster;
+    public NavMeshAgent navMeshAgent;
 
     private Rigidbody rb;
     private int count;
@@ -27,6 +29,8 @@ public class Collections : MonoBehaviour
         SetCountText();
 
         EnemyDesignEnd.SetActive(false);
+
+        enemySpeedAdjuster = FindObjectOfType<EnemySpeedAdjuster>();
     }
 
 
@@ -41,6 +45,7 @@ public class Collections : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+            MushSpeed();
         }
     }
 
@@ -72,6 +77,20 @@ public class Collections : MonoBehaviour
             fight.SetActive(true);
             yield return new WaitForSeconds(1);
             fight.SetActive(false);
+        }
+    }
+    void MushSpeed()
+    {
+        if (count <= 4)
+        {
+            enemySpeedAdjuster.ogSpeed = 8;
+            navMeshAgent.speed = enemySpeedAdjuster.ogSpeed;
+        }
+
+        else 
+        {
+            enemySpeedAdjuster.ogSpeed = 7;
+            navMeshAgent.speed = enemySpeedAdjuster.ogSpeed;
         }
     }
 }
