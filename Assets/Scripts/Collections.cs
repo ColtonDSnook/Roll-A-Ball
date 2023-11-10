@@ -83,13 +83,13 @@ public class Collections : MonoBehaviour
     {
         if (count <= 4)
         {
-            enemySpeedAdjuster.ogSpeed = 8;
+            enemySpeedAdjuster.ogSpeed = 7;
             navMeshAgent.speed = enemySpeedAdjuster.ogSpeed;
         }
 
         else 
         {
-            enemySpeedAdjuster.ogSpeed = 7;
+            enemySpeedAdjuster.ogSpeed = 6;
             navMeshAgent.speed = enemySpeedAdjuster.ogSpeed;
         }
     }
