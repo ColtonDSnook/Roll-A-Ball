@@ -21,7 +21,7 @@ public class EnemySpeedAdjuster : MonoBehaviour
     {
         yield return new WaitForSeconds(30);
         enemy.speed = newSpeed;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(10);
         enemy.speed = ogSpeed;
 
     }
