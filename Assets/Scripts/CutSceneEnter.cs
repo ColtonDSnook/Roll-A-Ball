@@ -15,10 +15,10 @@ public class CutSceneEnter : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        cutsceneCam.SetActive(true);
-        Player.SetActive(false);
         EffectEndAnim.SetActive(true);
         EffectEnd.SetActive(false);
+        cutsceneCam.SetActive(true);
+        Player.SetActive(false);
         StartCoroutine(FinishCut());
     }
 
