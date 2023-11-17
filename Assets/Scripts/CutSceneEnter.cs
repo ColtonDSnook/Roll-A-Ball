@@ -11,6 +11,7 @@ public class CutSceneEnter : MonoBehaviour
     public GameObject Fade;
     public GameObject EffectEnd;
     public GameObject EffectEndAnim;
+    public AudioSource scream;
 
     void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,7 @@ public class CutSceneEnter : MonoBehaviour
 
     IEnumerator FinishCut()
     {
+        scream.Play();
         yield return new WaitForSeconds(2);
         Fade.SetActive(true);
         yield return new WaitForSeconds(1);
