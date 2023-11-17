@@ -20,12 +20,12 @@ public class CutSceneEnter : MonoBehaviour
         EffectEnd.SetActive(false);
         cutsceneCam.SetActive(true);
         Player.SetActive(false);
+        scream.Play();
         StartCoroutine(FinishCut());
     }
 
     IEnumerator FinishCut()
     {
-        scream.Play();
         yield return new WaitForSeconds(2);
         Fade.SetActive(true);
         yield return new WaitForSeconds(1);
