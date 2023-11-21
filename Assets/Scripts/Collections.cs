@@ -16,6 +16,7 @@ public class Collections : MonoBehaviour
     public GameObject fight;
     public EnemySpeedAdjuster enemySpeedAdjuster;
     public NavMeshAgent navMeshAgent;
+    public AudioSource crunch;
 
     private Rigidbody rb;
     private int count;
@@ -45,6 +46,7 @@ public class Collections : MonoBehaviour
             count = count + 1;
 
             SetCountText();
+            crunch.Play();
             MushSpeed();
         }
     }
