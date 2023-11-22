@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using TMPro;
 using System.Collections;
 
@@ -21,6 +22,9 @@ public class Collections : MonoBehaviour
     private Rigidbody rb;
     private int count;
 
+    [SerializeField] private Volume postProcessingVolume;
+    private ChromaticAberration chromaticAberration;
+
     void Start()
     { 
         rb = GetComponent<Rigidbody>();
@@ -32,6 +36,8 @@ public class Collections : MonoBehaviour
         EnemyDesignEnd.SetActive(false);
 
         enemySpeedAdjuster = FindObjectOfType<EnemySpeedAdjuster>();
+
+        postProcessingVolume.profile.TryGet(out chromaticAberration);
     }
 
 
@@ -48,6 +54,7 @@ public class Collections : MonoBehaviour
             SetCountText();
             crunch.Play();
             MushSpeed();
+            VFXChanger();
         }
     }
 
@@ -93,6 +100,42 @@ public class Collections : MonoBehaviour
         {
             enemySpeedAdjuster.ogSpeed = 6;
             navMeshAgent.speed = enemySpeedAdjuster.ogSpeed;
+        }
+    }
+
+
+
+    void VFXChanger()
+    {
+        switch (count)
+        {
+            case 0:
+                chromaticAberration.intensity.value = 0f;
+                break;
+            case 1:
+                chromaticAberration.intensity.value = 0.15f;
+                break;
+            case 2:
+                chromaticAberration.intensity.value = 0.30f;
+                break;
+            case 3:
+                chromaticAberration.intensity.value = 0.45f;
+                break;
+            case 4:
+                chromaticAberration.intensity.value = 0.60f;
+                break;
+            case 5:
+                chromaticAberration.intensity.value = 0.75f;
+                break;
+            case 6:
+                chromaticAberration.intensity.value = 0.90f;
+                break;
+            case 7:
+                chromaticAberration.intensity.value = 1f;
+                break;
+            case 8:
+                chromaticAberration.intensity.value = 1f;
+                break;
         }
     }
 }

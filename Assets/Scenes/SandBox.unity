@@ -83131,6 +83131,7 @@ MonoBehaviour:
   enemySpeedAdjuster: {fileID: 967070767}
   navMeshAgent: {fileID: 1242492981}
   crunch: {fileID: 1382805077}
+  postProcessingVolume: {fileID: 1517462369}
 --- !u!81 &1382805076
 AudioListener:
   m_ObjectHideFlags: 0
