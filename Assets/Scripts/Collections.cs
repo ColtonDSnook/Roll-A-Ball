@@ -24,6 +24,9 @@ public class Collections : MonoBehaviour
 
     [SerializeField] private Volume postProcessingVolume;
     private ChromaticAberration chromaticAberration;
+    private DepthOfField depthOfField;
+    private LensDistortion lensDistortion;
+    private ColorAdjustments colorAdjustments;
 
     void Start()
     { 
@@ -38,6 +41,9 @@ public class Collections : MonoBehaviour
         enemySpeedAdjuster = FindObjectOfType<EnemySpeedAdjuster>();
 
         postProcessingVolume.profile.TryGet(out chromaticAberration);
+        postProcessingVolume.profile.TryGet(out depthOfField);
+        postProcessingVolume.profile.TryGet(out lensDistortion);
+        postProcessingVolume.profile.TryGet(out colorAdjustments);
     }
 
 
@@ -111,30 +117,75 @@ public class Collections : MonoBehaviour
         {
             case 0:
                 chromaticAberration.intensity.value = 0f;
+                depthOfField.gaussianStart.value = 10f;
+                depthOfField.gaussianEnd.value = 50f;
+                lensDistortion.intensity.value = 0f;
+                colorAdjustments.contrast.value = 0f;
+                colorAdjustments.saturation.value = 0f;
                 break;
             case 1:
                 chromaticAberration.intensity.value = 0.15f;
+                depthOfField.gaussianStart.value = 9f;
+                depthOfField.gaussianEnd.value = 45f;
+                lensDistortion.intensity.value = 0.1f;
+                colorAdjustments.contrast.value = -5f;
+                colorAdjustments.saturation.value = 0f;
                 break;
             case 2:
                 chromaticAberration.intensity.value = 0.30f;
+                depthOfField.gaussianStart.value = 8f;
+                depthOfField.gaussianEnd.value = 40f;
+                lensDistortion.intensity.value = 0.2f;
+                colorAdjustments.contrast.value = -10f;
+                colorAdjustments.saturation.value = 10f;
                 break;
             case 3:
                 chromaticAberration.intensity.value = 0.45f;
+                depthOfField.gaussianStart.value = 7f;
+                depthOfField.gaussianEnd.value = 35f;
+                lensDistortion.intensity.value = 0.3f;
+                colorAdjustments.contrast.value = -15f;
+                colorAdjustments.saturation.value = 25f;
                 break;
             case 4:
                 chromaticAberration.intensity.value = 0.60f;
+                depthOfField.gaussianStart.value = 6f;
+                depthOfField.gaussianEnd.value = 30f;
+                lensDistortion.intensity.value = 0.4f;
+                colorAdjustments.contrast.value = -20f;
+                colorAdjustments.saturation.value = 40f;
                 break;
             case 5:
                 chromaticAberration.intensity.value = 0.75f;
+                depthOfField.gaussianStart.value = 5f;
+                depthOfField.gaussianEnd.value = 25f;
+                lensDistortion.intensity.value = 0.5f;
+                colorAdjustments.contrast.value = -25f;
+                colorAdjustments.saturation.value = 55f;
                 break;
             case 6:
                 chromaticAberration.intensity.value = 0.90f;
+                depthOfField.gaussianStart.value = 4f;
+                depthOfField.gaussianEnd.value = 20f;
+                lensDistortion.intensity.value = 0.6f;
+                colorAdjustments.contrast.value = -30f;
+                colorAdjustments.saturation.value = 70f;
                 break;
             case 7:
                 chromaticAberration.intensity.value = 1f;
+                depthOfField.gaussianStart.value = 3f;
+                depthOfField.gaussianEnd.value = 15f;
+                lensDistortion.intensity.value = 0.7f;
+                colorAdjustments.contrast.value = -35f;
+                colorAdjustments.saturation.value = 85f;
                 break;
             case 8:
                 chromaticAberration.intensity.value = 1f;
+                depthOfField.gaussianStart.value = 2f;
+                depthOfField.gaussianEnd.value = 10f;
+                lensDistortion.intensity.value = 0.8f;
+                colorAdjustments.contrast.value = -40f;
+                colorAdjustments.saturation.value = 100f;
                 break;
         }
     }
